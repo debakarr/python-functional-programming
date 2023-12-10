@@ -49,3 +49,7 @@ bqplot
 black[jupyter]
 mypy
 flake8
+
+# Functional programming packages
+toolz
+returns
