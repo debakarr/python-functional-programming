@@ -18,8 +18,14 @@ def save_and_run_magic(line, cell):
     filename = "tmp.py"
     Path(filename).write_text(cell)
 
+    # Check if commands list is empty
+    if commands:
+        cmd_list = [sys.executable, "-m", *commands, filename]
+    else:
+        cmd_list = [sys.executable, filename]
+
     process = subprocess.run(
-        [sys.executable, "-m", *commands, filename],
+        cmd_list,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,

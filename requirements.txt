@@ -53,3 +53,4 @@ flake8
 # Functional programming packages
 toolz
 returns
+oslash
